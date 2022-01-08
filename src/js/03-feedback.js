@@ -31,12 +31,13 @@ function inputSaved (evt) {
 
 function formSubmit (evt) {
    evt.preventDefault();
-   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+   if (JSON.parse(localStorage.getItem(STORAGE_KEY))) {
+        console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+   }  
    evt.target.reset();
    localStorage.removeItem(STORAGE_KEY) 
 }
 
-console.log(textInForm);
 
 function populateTextArea () { 
     const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
